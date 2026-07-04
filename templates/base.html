@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}base page {% endblock %}</title>
+    <style>
+        body {background-color: #FAFAFA;font-family: Arial, Helvetica, sans-serif;padding: 10px0;}
+        header {background-color: #F1F5F9; padding: 10px; text-align: center;}
+        nav {background-color: #8a8787;text-decoration: none;}
+        main {background-color:#cac4c4 ;}
+        footer {background-color:#F1F5F9;}
+
+
+
+    </style>
+    
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+        
+</head>
+<body>
+    <header>
+    
+        <img src="{{ url_for('static', filename='image.png') }}" class="logo">
+        <span style="color: #1a1616;"><h1>
+            <i>ELITE VISION</i><br>
+        </h1>
+        <br>
+        <h2>we are here to help you...</h2>
+        <h3>with your business</h3></span><hr>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/page">message</a>
+        </nav>
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>
+                <span style="color: rgb(22, 19, 13);">
+                    {{ message }}
+                </span>
+            </p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    </header>
+
+    <main>{% block content %}
+        {% endblock %}</main>
+
+    <footer><span style="color:#312f2f ;"><h2>this is official business page ...</h2><br>
+    <p>for more information please contact us on XXXXXXXXX<br>
+    ELITEVISION GMAIL .COM</p><br>
+@ELITE PAGE.. <br></span>
+</footer>
+
+</body>
+</html>

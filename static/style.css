@@ -1,0 +1,15 @@
+header{
+    background-color:#babfc5;
+    text-align:center;
+    position:relative;
+    padding:20px;
+}
+
+.logo{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    width:100px;   /* adjust size */
+    height:auto;
+}
